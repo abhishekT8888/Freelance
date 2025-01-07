@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        monda: ['Monda', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
-}
+};
