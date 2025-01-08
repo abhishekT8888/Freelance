@@ -1,12 +1,14 @@
 import React from 'react'
 import Nav from './Components/Nav'
-import Display from './Components/Display'
+import Slider from './Components/Slider'
+import AboutUsComponent from './Components/AboutUs'
 
 function App() {
   return (
     <>
       <Nav></Nav>
-      <Display></Display>
+      <Slider></Slider>
+      <AboutUsComponent></AboutUsComponent>
     </>
   )
 }
