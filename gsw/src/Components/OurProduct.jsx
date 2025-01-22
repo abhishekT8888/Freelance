@@ -5,9 +5,6 @@ import p5 from "../gsw images/p5.webp";
 import p6 from "../gsw images/p6.webp";
 import p7 from "../gsw images/p7.webp";
 import p4 from "../gsw images/p4.webp";
-import p1 from "../gsw images/p1.webp";
-import p2 from "../gsw images/p2.webp";
-import p3 from "../gsw images/p3.webp";
 
 function OurProduct() {
   const products = [
@@ -41,31 +38,16 @@ function OurProduct() {
       image: p4,
       description: "GSW Fighter Rotavator Reversible Plough"
     },
-    {
-      id: 7,
-      image: p1,
-      description: "GSW 5 Tyne Broad Bed Furrow (BBF)."
-    },
-    {
-      id: 8,
-      image: p2,
-      description: "GSW 7 Tyne Broad Bed Furrow (BBF)."
-    },
-    {
-      id: 9,
-      image: p3,
-      description: "GSW 9 Tyne Broad Bed Furrow (BBF)."
-    },
   ];
 
   return (
-    <div className="p-5">
-      <h1 className="text-3xl font-bold text-center text-red-600 mb-10 ">Our Products</h1>
-      <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="p-5 mt-14">
+      <h1 className="text-3xl font-bold text-center text-red-600 mb-20 ">Our Products</h1>
+      <div className="grid gap-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
         {products.map((product) => (
           <div 
             key={product.id} 
-            className="bg-gray-200 p-6 rounded-lg max-w-sm mx-auto shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+            className="bg-gray-200 p-6 rounded-lg max-w-sm mx-auto shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl mb-10">
             <img 
               src={product.image} 
               alt={`Product ${product.id}`} 

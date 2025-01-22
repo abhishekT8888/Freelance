@@ -4,6 +4,7 @@ import Slider from './Components/Slider'
 import AboutUsComponent from './Components/AboutUs'
 import OurProduct from './Components/OurProduct'
 import Testimonials from './Components/Testimonials'
+import Footer from './Components/Footer'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <AboutUsComponent></AboutUsComponent>
       <OurProduct/>
       <Testimonials/>
+      <Footer/>
     </>
   )
 }

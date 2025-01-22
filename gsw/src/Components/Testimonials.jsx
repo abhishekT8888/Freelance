@@ -17,7 +17,7 @@ function Testimonials() {
       image: f2,
       name: "Suresh Yadav",
       review: "Amazing experience! Will definitely be back for more.",
-      rating: 4,
+      rating: 5,
     },
     {
       image: f3,
@@ -29,7 +29,7 @@ function Testimonials() {
       image: f4,
       name: "Anil Sharma",
       review: "Fantastic service, and the products are top-notch. Highly recommend.",
-      rating: 4,
+      rating: 5,
     },
     {
       image: f5,
@@ -41,56 +41,51 @@ function Testimonials() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Change testimonial every 3 seconds and loop through
+  const renderStars = (rating) => {
+    return [...Array(5)].map((_, i) => (
+      <span key={i} className={`text-xl ${i < rating ? "text-yellow-500" : "text-gray-300"}`}>
+        &#9733;
+      </span>
+    ));
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length); // Loop back to first testimonial
-    }, 3000);
+      setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 3 ? 0 : prevIndex + 1));
+    }, 3000); // Change slide every 3 seconds
 
-    // Cleanup interval on component unmount
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // Cleanup interval on component unmount
   }, []);
 
   return (
-    <div className="py-12 bg-gray-100 flex flex-col justify-center">
-      {/* Title */}
-      <h2 className="text-3xl font-bold text-center mb-8">What Our Customers Say</h2>
-
-      {/* Testimonial Container with sliding effect */}
-      <div className="overflow-hidden relative">
-        <div
-          className="flex transition-transform duration-1000 ease-in-out"
-          style={{
-            transform: `translateX(-${currentIndex * 100}%)`, // Slide the testimonials
-          }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="flex-none w-full max-w-xs mx-2 bg-white p-6 rounded-lg shadow-lg"
-            >
-              <img
-                src={testimonial.image}
-                alt={`Testimonial ${index + 1}`}
-                className="w-32 h-32 object-cover rounded-full mb-4 mx-auto"
-              />
-              <h3 className="text-xl font-semibold mb-2">{testimonial.name}</h3>
-              <div className="flex items-center mb-4">
-                {Array.from({ length: testimonial.rating }).map((_, idx) => (
-                  <svg
-                    key={idx}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    className="w-5 h-5 text-yellow-500"
-                  >
-                    <path d="M12 17.75l6.09 3.51-1.64-7.07L22 9.25l-7.19-.61L12 2 9.19 8.64 2 9.25l5.54 4.94-1.64 7.07L12 17.75z" />
-                  </svg>
-                ))}
+    <div className="relative bg-gray-100 py-10 mt-10">
+      <div className="text-center mb-6">
+        <h2 className="text-3xl font-semibold text-gray-800 border-b-4 border-red-600 inline-block pb-2">
+          Testimonials
+        </h2>
+      </div>
+      <div className="w-full max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden ">
+        <div className="flex justify-between items-center">
+          <div className="flex space-x-4 p-6 transition-all duration-1000 ease-in-out transform">
+            {testimonials.slice(currentIndex, currentIndex + 3).map((testimonial, index) => (
+              <div
+                key={index}
+                className="max-w-xs text-center opacity-0 animate-slide-in transition-opacity duration-1000"
+                style={{ animationDelay: `${index * 0.3}s` }}
+              >
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-24 h-24 rounded-full mx-auto mb-4 shadow-md"
+                />
+                <h3 className="text-lg font-semibold text-gray-800">{testimonial.name}</h3>
+                <div className="flex justify-center gap-1 my-2">
+                  {renderStars(testimonial.rating)}
+                </div>
+                <p className="text-gray-600 text-sm">{testimonial.review}</p>
               </div>
-              <p className="text-gray-600">{testimonial.review}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

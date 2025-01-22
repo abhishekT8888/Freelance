@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
-import img1 from "../gsw images/Broad-Bed-Furrow-_Website-banner.webp";
 import img2 from "../gsw images/plough-banner.jpeg";
 import img3 from "../gsw images/t5.webp";
 
 function FullWidthSlider() {
-  const images = [img1, img2, img3];
+  const images = [ img2, img3];
   const captions = [
-    {
-      heading: "Broad Bed Furrow",
-      description:
-        "Say goodbye to cramped plants and hello to spacious, nutrient-rich planting beds that promote optimal growth. The Broad Bed Furrow is designed to maximize planting space, enhance soil fertility and drainage, and reduce weed growth, saving you valuable time and effort.",
-    },
     {
       heading: "Plough",
       description:
