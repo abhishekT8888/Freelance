@@ -1,7 +1,16 @@
 import React from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
+
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0, // Scroll to the top of the page
+      behavior: 'smooth' // Enable smooth scrolling
+    });
+  }
+
   return (
     <nav className="bg-slate-950 text-red-600 p-12">
       {/* First Row: Contact Info, Quick Links, Product List */}
@@ -11,28 +20,45 @@ const Footer = () => {
           <h4 className="text-lg font-bold text-white mb-3">Contact Info</h4>
           <div className="flex items-center mb-3">
             <FaMapMarkerAlt className="mr-2 text-red-600" />
-            <p className="hover:text-white">HIRDAO ROAD LONAR 443302 DIST BULDHANA (MH)</p>
+            <a
+              href="https://www.google.com/maps/place/Gurumauli+steel+works+mfg+plough+and+agriculture+implements/@19.9858523,76.5209591,15.84z/data=!4m6!3m5!1s0x3bd083fd48b95d7d:0x528783659ce96fcf!8m2!3d19.9856893!4d76.5241933!16s%2Fg%2F11nmcxpx5c?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank" // Opens the link in a new tab
+              rel="noopener noreferrer" // Security feature
+              className="hover:text-white"
+            >
+              HIRDAO ROAD LONAR 443302 DIST BULDHANA (MH)
+            </a>
           </div>
+
           <div className="flex items-center mb-3">
             <FaPhoneAlt className="mr-2 text-red-600" />
-            <p className="hover:text-white">+91 954 520 8208</p>
+            <a href="tel:+919545208208" className="hover:text-white">
+              +91 954 520 8208
+            </a>
           </div>
+
           <div className="flex items-center">
             <FaEnvelope className="mr-2 text-red-600" />
-            <p className="hover:text-white">info@gsw.net.in</p>
+            <a
+              href="mailto:ombjadhav.06@gmail.com"
+              className="hover:text-white"
+            >
+              ombjadhav.06@gmail.com
+            </a>
           </div>
+
         </div>
 
         {/* Quick Links */}
         <div className="flex flex-col md:w-1/3">
           <h4 className="text-lg font-bold text-white mb-3">Quick Links</h4>
           <ul className="space-y-2">
-            <li><a href="#home" className="hover:text-white flex items-center">→ <span className="ml-2">Home</span></a></li>
-            <li><a href="#about" className="hover:text-white flex items-center">→ <span className="ml-2">About Us</span></a></li>
-            <li><a href="#products" className="hover:text-white flex items-center">→ <span className="ml-2">Products</span></a></li>
-            <li><a href="#gallery" className="hover:text-white flex items-center">→ <span className="ml-2">Gallery</span></a></li>
-            <li><a href="#contact" className="hover:text-white flex items-center">→ <span className="ml-2">Contact Us</span></a></li>
-            <li><a href="#brochure" className="hover:text-white flex items-center">→ <span className="ml-2">Brochure</span></a></li>
+            <li><Link to="/" onClick={scrollTop} className="hover:text-white flex items-center">→ <span className="ml-2">Home</span></Link></li>
+            <li><Link to="/about" onClick={scrollTop} className="hover:text-white flex items-center">→ <span className="ml-2">About Us</span></Link></li>
+            <li><Link to="/products" onClick={scrollTop} className="hover:text-white flex items-center">→ <span className="ml-2">Products</span></Link></li>
+            <li><Link to="/gallery" onClick={scrollTop} className="hover:text-white flex items-center">→ <span className="ml-2">Gallery</span></Link></li>
+            <li><Link to="/contact" onClick={scrollTop} className="hover:text-white flex items-center">→ <span className="ml-2">Contact Us</span></Link></li>
+            <li><Link to="/brochure" onClick={scrollTop} className="hover:text-white flex items-center">→ <span className="ml-2">Brochure</span></Link></li>
           </ul>
         </div>
 
@@ -40,15 +66,13 @@ const Footer = () => {
         <div className="flex flex-col md:w-1/3">
           <h4 className="text-lg font-bold text-white mb-3">Products</h4>
           <ul className="space-y-2">
-            <li><a href="#gsw-hi-tech-plough" className="hover:text-white flex items-center">→ <span className="ml-2">GSW Hi Tech Reversible Plough</span></a></li>
-            <li><a href="#gsw-hydraulic-plough" className="hover:text-white flex items-center">→ <span className="ml-2">Two Bottam GSW Hydraulic Reversible Plough</span></a></li>
-            <li><a href="#gsw-auto-plough" className="hover:text-white flex items-center">→ <span className="ml-2">GSW Hi Tech Auto Reversible Plough</span></a></li>
-            <li><a href="#gsw-highlighted-plough" className="hover:text-white flex items-center">→ <span className="ml-2">GSW Hi Tech Highted Reversible Plough</span></a></li>
-            <li><a href="#kubota-special-plough" className="hover:text-white flex items-center">→ <span className="ml-2">GSW Hi Tech Kubota Special Reversible Plough</span></a></li>
-            <li><a href="#fighter-rotavator" className="hover:text-white flex items-center">→ <span className="ml-2">GSW Fighter Rotavator Reversible Plough</span></a></li>
-            <li><a href="#bbf-5-tyne" className="hover:text-white flex items-center">→ <span className="ml-2">GSW 5 Tyne Broad Bed Furrow (BBF)</span></a></li>
-            <li><a href="#bbf-7-tyne" className="hover:text-white flex items-center">→ <span className="ml-2">GSW 7 Tyne Broad Bed Furrow (BBF)</span></a></li>
-            <li><a href="#bbf-9-tyne" className="hover:text-white flex items-center">→ <span className="ml-2">GSW 9 Tyne Broad Bed Furrow (BBF)</span></a></li>
+            {/* Update links to point to /products */}
+            <li><Link to="/products" onClick={scrollTop} className="hover:text-white flex items-center">→ <span className="ml-2">GSW Hi Tech Reversible Plough</span></Link></li>
+            <li><Link to="/products" onClick={scrollTop} className="hover:text-white flex items-center">→ <span className="ml-2">Two Bottom GSW Hydraulic Reversible Plough</span></Link></li>
+            <li><Link to="/products" onClick={scrollTop} className="hover:text-white flex items-center">→ <span className="ml-2">GSW Hi Tech Auto Reversible Plough</span></Link></li>
+            <li><Link to="/products" onClick={scrollTop} className="hover:text-white flex items-center">→ <span className="ml-2">GSW Hi Tech Highlighted Reversible Plough</span></Link></li>
+            <li><Link to="/products" onClick={scrollTop} className="hover:text-white flex items-center">→ <span className="ml-2">GSW Hi Tech Kubota Special Reversible Plough</span></Link></li>
+            <li><Link to="/products" onClick={scrollTop} className="hover:text-white flex items-center">→ <span className="ml-2">GSW Fighter Rotavator Reversible Plough</span></Link></li>
           </ul>
         </div>
       </div>

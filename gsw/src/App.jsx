@@ -1,22 +1,23 @@
-import React from 'react'
-import Nav from './Components/Nav'
-import Slider from './Components/Slider'
-import AboutUsComponent from './Components/AboutUs'
-import OurProduct from './Components/OurProduct'
-import Testimonials from './Components/Testimonials'
-import Footer from './Components/Footer'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Nav from './Components/Nav';
+import Footer from './Components/Footer';
+import Home from './Pages/Home';
+import Products from './Pages/Products';  // Assuming you have this component
+import About from './Pages/About';
 
 function App() {
   return (
-    <>
-      <Nav></Nav>
-      <Slider></Slider>
-      <AboutUsComponent></AboutUsComponent>
-      <OurProduct/>
-      <Testimonials/>
-      <Footer/>
-    </>
-  )
+    <Router>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} /> 
+        <Route path="/about" element={<About />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
 }
 
-export default App
+export default App;
