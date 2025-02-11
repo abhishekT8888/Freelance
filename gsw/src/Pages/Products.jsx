@@ -1,7 +1,7 @@
 import React from 'react'
 import Plough from '../Components/Products/Ploug'
 import Rotavator from '../Components/Products/Rotavator'
-import BottomTractorImage from "../gsw images/bottomimage.jpg";
+import BottomTractorImage from "../gsw images/BottomImage.jpg";
 
 
 function Products() {
