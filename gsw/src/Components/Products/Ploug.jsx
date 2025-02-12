@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderTractor from "../../gsw images/Plough Header.jpg";
+import HeaderTractor from "../../gsw images/update/GswRotavator4.png";
 import HiTechImage from "../../gsw images/p9.webp";
 import TwoBottam from "../../gsw images/p8.webp";
 import HiTechAuto from "../../gsw images/p5.webp";

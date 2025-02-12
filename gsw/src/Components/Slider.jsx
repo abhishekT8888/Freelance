@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import img2 from "../gsw images/plough-banner.jpeg";
-import img3 from "../gsw images/t5.webp";
+import img3 from "../gsw images/Fighter.png";
 
 function FullWidthSlider() {
   const images = [ img2, img3];

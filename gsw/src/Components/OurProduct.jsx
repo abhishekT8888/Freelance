@@ -44,7 +44,7 @@ function OurProduct() {
     {
       id: 6,
       image: p4,
-      description: "GSW Fighter Rotavator Reversible Plough"
+      description: "GSW Fighter Rotavator "
     },
   ];
 

@@ -12,7 +12,17 @@ import c9 from '../gsw images/gallery/c9.jpeg';
 import c10 from '../gsw images/gallery/c10.jpeg';
 import c11 from '../gsw images/gallery/c11.jpeg';
 
+import product1 from "../gsw images/update/GswRotavator1.png";
+import product2 from "../gsw images/update/GswRotavator2.png";
+import product3 from "../gsw images/update/GswRotavator3.png";
+import product4 from "../gsw images/update/GswRotavator4.png";
+import product5 from "../gsw images/update/GswRotavator5.png";
+import product6 from "../gsw images/update/04.png";
+import product7 from "../gsw images/update/10.png";
+import product8 from "../gsw images/update/13.png";
+
 const Gallery = () => {
+  const productImages = [product1, product2, product3, product4, product5,product6,product7,product8];
   const deliveryImages = [c11, c7, c9, c8, c10, c6, c1, c3, c4, c5, c2];
 
   return (
@@ -41,7 +51,25 @@ const Gallery = () => {
         </div>
       </div>
 
-      {/* Image Gallery */}
+      {/* Product Images Section */}
+      <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Products</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
+        {productImages.map((img, index) => (
+          <div
+            key={index}
+            className="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
+          >
+            <img
+              src={img}
+              alt={`Product ${index + 1}`}
+              className="w-full h-80 object-cover transform hover:scale-105 transition-transform duration-300 ease-in-out"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Delivery Images Section */}
+      <h2 className="text-3xl font-bold text-gray-800 mb-6">Happy Customer Deliveries</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {deliveryImages.map((img, index) => (
           <div

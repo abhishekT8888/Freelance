@@ -44,7 +44,7 @@ function About() {
         </p>
         <div className="flex justify-center">
           <a
-            href="mailto:ombjadhav.06@gmail.com"
+            href="mailto:gurumaulisteelworks01@gmail.com"
             className="bg-red-600 text-white py-3 px-8 rounded-full text-xl font-semibold transition-all duration-300 hover:bg-red-700 transform hover:scale-105"
           >
             Send Us an Email
